@@ -1,8 +1,8 @@
 import * as React from 'react';
-import * ReactDOM from 'react-dom';
-import { Header } from './header';
+import * as ReactDOM from 'react-dom';
+import { Header } from "./header";
 
-window.addEventListener('load', listener:(){
+window.addEventListener('load', () => {
 
-ReactDOM.render(<Header />, document.getElementById(elementid:'react_root'));
+ReactDOM.render(<Header />, document.getElementById('react_root'));
 });

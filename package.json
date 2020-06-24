@@ -1,18 +1,26 @@
 {
-  "name": "myapp",
+  "name": "2",
   "version": "1.0.0",
   "description": "react",
-  "main": "hello.js",
+  "main": "index.js",
   "scripts": {
+    "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
+    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "env NODE_ENV=development webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Дмитрий Азаров",
   "license": "ISC",
   "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-dom": "^16.13.1",
+    "reactdom": "^2.0.0"
+  }
 }

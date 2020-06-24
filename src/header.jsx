@@ -5,5 +5,5 @@ export function Header() {
         <Header>
             <h1>Reddit for our own</h1>
         </Header>
-    )
+    );
 }
