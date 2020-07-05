@@ -2,8 +2,8 @@ import * as React  from 'react';
 
 export function Header() {
     return (
-        <Header>
+        <header>
             <h1>Reddit for our own</h1>
-        </Header>
+        </header>
     );
 }
