@@ -4,9 +4,9 @@
   "description": "react",
   "main": "index.js",
   "scripts": {
-    "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "env NODE_ENV=development webpack-dev-server",
+    "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Дмитрий Азаров",
@@ -20,8 +20,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "env": "0.0.2",
+    "cross-env": "7.0.2",
     "react-dom": "^16.13.1",
-    "reactdom": "^2.0.0"
+    "react": "^16.13.1"
   }
 }
