@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Header } from "./header";
+import { Header } from "../shared/header";
 
 window.addEventListener('load', () => {
 

@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "cross-env": "7.0.2",
-    "react-dom": "^16.13.1",
-    "react": "^16.13.1"
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
