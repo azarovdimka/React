@@ -3,6 +3,8 @@ function setupDevtool() {
     if (IS_PROD) return false;
 }
 
+const NODE_ENV = process.env.NODE_ENV;
+
 module.exports = {
     resolve: {
         extensions: ['.jsx', '.js', '.json']
