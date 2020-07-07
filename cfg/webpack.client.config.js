@@ -4,12 +4,14 @@ function setupDevtool() {
 }
 
 const NODE_ENV = process.env.NODE_ENV;
+const IS_DEV = NODE_ENV == "development";
+const IS_PROD = NODE_ENV == "production";
 
 module.exports = {
     resolve: {
         extensions: ['.jsx', '.js', '.json']
     },
-    mode: NODE_ENV ? NODE_ENV : 'development',
+    mode: NODE_ENV ? NODE_ENV : 'production',
     entry: path.resolve(__dirname, '../src/client/index.jsx'),
     output: {
         path: path.resolve(__dirname, '../dist/client'),
