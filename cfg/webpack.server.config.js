@@ -1,6 +1,7 @@
 const path = require('path');
 
 const NODE_ENV = process.env.NODE_ENV;
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     target: "node",
@@ -13,11 +14,14 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json']
     },
+    externals: [nodeExternals()],
     module: {
         rules: [{
             test: /\.[tj]sx?$/,
             use: ['ts-loader']
         }]
     },
-
+optimization: {
+        minimize: false,
+}
 };
