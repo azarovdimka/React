@@ -1,4 +1,5 @@
 const path = require('path');
+
 function setupDevtool() {
     if (IS_DEV) return 'eval';
     if (IS_PROD) return false;
@@ -27,3 +28,4 @@ module.exports = {
     },
     devtool: setupDevtool()
 };
+1
