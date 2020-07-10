@@ -1,12 +1,13 @@
 import express from 'express';
 import ReactDOM from 'react-dom/server'
-import { Header } from ' ../shared/Header';
+import { Header } from '../shared/Header';
 const app = express();
 
 app.get('/', (req, res) => {
     res.send(
-        ReactDOM.renderToString(Header());
+        "Hello"
     );
+    // ReactDOM.renderToString(Header())
 });
 
 app.listen(3000, () => {
