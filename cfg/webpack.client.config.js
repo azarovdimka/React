@@ -1,4 +1,6 @@
 const path = require('path');
+const { HotModuleReplacementPlugin } = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 function setupDevtool() {
     if (IS_DEV) return 'eval';
@@ -12,13 +14,20 @@ const IS_PROD = NODE_ENV == "production";
 module.exports = {
     mode: NODE_ENV ? NODE_ENV : 'development',
     resolve: {
-        extensions: ['.jsx', '.js', '.json']
+        extensions: ['.jsx', '.js', '.json'],
+        alias: {
+            'react-dom': IS_DEV ? '@hot-loader/react-dom' : 'react-dom',
+        }
     },
 
-    entry: path.resolve(__dirname, '../src/client/index.jsx'),
+    entry: [
+        path.resolve(__dirname, '../src/client/index.jsx'),
+        'webpack-hot-middleware/client?path=http://localhost:3001/static/_webpack_hmr',
+],
     output: {
         path: path.resolve(__dirname, '../dist/client'),
-        filename: 'client.js'
+        filename: 'client.js',
+        publicPath: "/static/",
     },
     module: {
         rules: [{
@@ -26,5 +35,11 @@ module.exports = {
             use: ['ts-loader']
         }]
     },
-    devtool: setupDevtool()
+    devtool: setupDevtool(),
+    plugins: IS_DEV                 // если is_dev все отлично
+        ? [
+        new CleanWebpackPlugin(),   //удаляет из папки js-файлы чтобы не накапливались приложение не тупило
+        new HotModuleReplacementPlugin(),
+    ]
+        : [],                       // отключает плагины
 };
