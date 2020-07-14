@@ -30,10 +30,24 @@ module.exports = {
         publicPath: '/static/',
     },
     module: {
-        rules: [{
+        rules: [
+            {
             test: /\.[tj]sx?$/,
             use: ['ts-loader']
-        }]
+        },
+            {
+            test: /\.css$/,
+            use: [
+                'style-loader', {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        node: 'local',
+                        localIdentName: '[name]__[local]--[hash:base64:5]',
+                    }
+                }
+                }]
+            }]
     },
     devtool: setupDevtool(),
     plugins: IS_DEV                 // если is_dev все отлично

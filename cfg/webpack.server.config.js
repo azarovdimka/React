@@ -16,10 +16,26 @@ module.exports = {
     },
     externals: [nodeExternals()],
     module: {
-        rules: [{
-            test: /\.[tj]sx?$/,
-            use: ['ts-loader']
-        }]
+        rules: [
+            {
+                test: /\.[tj]sx?$/,
+                use: ['ts-loader']
+            }, {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                node: 'local',
+                                localIdentName: '[name]__[local]--[hash:base64:5]',
+                            },
+                            onlyLocals: true,
+                        }
+                    }
+                ],
+            }
+        ]
     },
 optimization: {
         minimize: false,
