@@ -42,7 +42,7 @@ module.exports = {
                 loader: 'css-loader',
                 options: {
                     modules: {
-                        node: 'local',
+                        mode: 'local',
                         localIdentName: '[name]__[local]--[hash:base64:5]',
                     }
                 }
