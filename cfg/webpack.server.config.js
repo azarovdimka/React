@@ -21,7 +21,7 @@ module.exports = {
                 test: /\.[tj]sx?$/,
                 use: ['ts-loader']
             }, {
-                test: /\.css$/,
+                test: /\.less$/,                                                                                         //вместо css используется less
                 use: [
                     {
                         loader: 'css-loader',
@@ -32,7 +32,8 @@ module.exports = {
                             },
                             onlyLocals: true,
                         }
-                    }
+                    },
+                    'less-loader',
                 ],
             }
         ]

@@ -36,17 +36,19 @@ module.exports = {
             use: ['ts-loader']
         },
             {
-            test: /\.css$/,
+            test: /\.less$/,                                                                                             //вместо css используется less
             use: [
                 'style-loader', {
                 loader: 'css-loader',
                 options: {
                     modules: {
                         mode: 'local',
-                        localIdentName: '[name]__[local]--[hash:base64:5]',
+                        localIdentName: '[name]__[local]--[hash:base64:5]',                                              //hash:base64:5 для уникальности селектора
                     }
                 }
-                }]
+                },
+                'less-loader',
+                ]
             }]
     },
     devtool: setupDevtool(),
